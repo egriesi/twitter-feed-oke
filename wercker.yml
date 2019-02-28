@@ -1,3 +1,4 @@
+
 #Use OpenJDK base docker image from dockerhub and open the application port on the docker container
 box:
   id: openjdk:8
@@ -13,6 +14,7 @@ build:
         name: maven build
         code: mvn clean assembly:assembly
         #Push the docker image with our built and tested application to the Oracle Container Registry
+
 push-release:
   steps:
     - internal/docker-push:
